@@ -14,4 +14,11 @@
 	BoardVO u = upload.uploadPhoto(request);
 
 	int i = boardDAO.updateBoard(u);
+	String msg ="데이터 수정 성공";
+	if(i == 0 ) msg = "[에러] 데이터 수정 실패 !";
 %>
+
+<script>
+	alert('<%=msg%>');
+	location.href='posts.jsp';
+</script>
